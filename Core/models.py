@@ -12,6 +12,23 @@ class Server(models.Model):
 class Customer(models.Model):
 	name = models.CharField(max_length=250)
 	servers = models.ManyToManyField("Server")
+	SCPO =models.CharField(max_length=250,blank=True, null=True)
+	Versions=models.CharField(max_length=250,blank=True, null=True)
+	Citris_URL= models.CharField(max_length=250,blank=True, null=True)
+	FS_URL= models.CharField(max_length=250,blank=True, null=True)
+	JCES_URL =models.CharField(max_length=250,blank=True, null=True)
+	L3= models.CharField(max_length=250,blank=True, null=True)
+	PM = models.CharField(max_length=250,blank=True, null=True)
+	CDM= models.CharField(max_length=250,blank=True, null=True)
+	DB_SERVER=models.CharField(max_length=250,blank=True, null=True)
+	APPL_SERVER=models.CharField(max_length=250,blank=True, null=True)
+	SRE_SERVER= models.CharField(max_length=250,blank=True, null=True)
+	DB_Username=models.CharField(max_length=250,blank=True, null=True)
+	DB_Password=  models.CharField(max_length=250,blank=True, null=True)
+	Weblogic_Console=models.CharField(max_length=250,blank=True, null=True)
+	Weblogic_Password=models.CharField(max_length=250,blank=True, null=True)
+    
+
 	
 	def __str__(self):
 		return self.name
