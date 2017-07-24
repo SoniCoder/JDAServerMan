@@ -1,3 +1,9 @@
+<style type="text/css">
+.box {
+	background-color: #EFEFF4;
+	padding: 10px;
+}
+</style>
 {% extends "admin/base.html" %}
 
 {% load staticfiles %}
@@ -5,7 +11,8 @@
 {% block title %}JDA Server Admin{% endblock %}
 
 {% block branding %}
-<h1 id="site-name"><a href="{% url 'admin:index' %}"><img src="{% static 'images/logo.png' %}"></img></a></h1>
+<div class="box"><img src="{% static 'images/logo.png' %}" width=150px></img></div>
+<h1 id="site-name"><a href="{% url 'admin:index' %}"></a></h1>
 {% endblock %}
 
 {% block nav-global %}{% endblock %}
