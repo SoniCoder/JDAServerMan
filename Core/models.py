@@ -11,7 +11,7 @@ class Server(models.Model):
 
 class Customer(models.Model):
 	name = models.CharField(max_length=250)
-	servers = models.ManyToManyField("Server")
+	servers = models.ManyToManyField("Server", blank = True)
 	SCPO =models.CharField(max_length=250,blank=True, null=True)
 	Versions=models.CharField(max_length=250,blank=True, null=True)
 	Citris_URL= models.CharField(max_length=250,blank=True, null=True)

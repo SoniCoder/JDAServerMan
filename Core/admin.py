@@ -4,11 +4,21 @@ from django.contrib import admin
 from .models import Customer
 from .models import Server
 
+class ServersInline(admin.TabularInline):
+    model = Customer.servers.through
+
 class CustomerAdmin(admin.ModelAdmin):
 	list_display = ('name',)
-	list_filter = ('servers',)
+	inlines = [
+        ServersInline,
+	]
+	exclude = ('servers',)
 class ServerAdmin(admin.ModelAdmin):
 	list_display = ('sv_id', 'active')
+	list_filter = ('customer',)
+	inlines = [
+        ServersInline,
+	]
 
 
 admin.site.register(Customer, CustomerAdmin)
