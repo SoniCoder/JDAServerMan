@@ -9,6 +9,7 @@ class ServersInline(admin.TabularInline):
 
 class CustomerAdmin(admin.ModelAdmin):
 	list_display = ('name',)
+	list_filter = ('servers',)
 	inlines = [
         ServersInline,
 	]
