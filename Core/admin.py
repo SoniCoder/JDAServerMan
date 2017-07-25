@@ -6,7 +6,7 @@ from .models import Server
 
 class CustomerAdmin(admin.ModelAdmin):
 	list_display = ('name',)
-
+	list_filter = ('servers',)
 class ServerAdmin(admin.ModelAdmin):
 	list_display = ('sv_id', 'active')
 
