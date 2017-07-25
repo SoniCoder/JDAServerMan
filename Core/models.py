@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Server(models.Model):
-	sv_id = models.CharField(max_length=250)
+	sv_id = models.CharField(max_length=1000)
 	active = models.BooleanField(default=False)
 	
 	def __str__(self):
@@ -10,23 +10,23 @@ class Server(models.Model):
 
 
 class Customer(models.Model):
-	name = models.CharField(max_length=250)
+	name = models.CharField(max_length=1000)
 	servers = models.ManyToManyField("Server")
-	SCPO =models.CharField(max_length=250,blank=True, null=True)
-	Versions=models.CharField(max_length=250,blank=True, null=True)
-	Citris_URL= models.CharField(max_length=250,blank=True, null=True)
-	FS_URL= models.CharField(max_length=250,blank=True, null=True)
-	JCES_URL =models.CharField(max_length=250,blank=True, null=True)
-	L3= models.CharField(max_length=250,blank=True, null=True)
-	PM = models.CharField(max_length=250,blank=True, null=True)
-	CDM= models.CharField(max_length=250,blank=True, null=True)
-	DB_SERVER=models.CharField(max_length=250,blank=True, null=True)
-	APPL_SERVER=models.CharField(max_length=250,blank=True, null=True)
-	SRE_SERVER= models.CharField(max_length=250,blank=True, null=True)
-	DB_Username=models.CharField(max_length=250,blank=True, null=True)
-	DB_Password=  models.CharField(max_length=250,blank=True, null=True)
-	Weblogic_Console=models.CharField(max_length=250,blank=True, null=True)
-	Weblogic_Password=models.CharField(max_length=250,blank=True, null=True)
+	SCPO =models.CharField(max_length=1000,blank=True, null=True)
+	Versions=models.CharField(max_length=1000,blank=True, null=True)
+	Citris_URL= models.CharField(max_length=1000,blank=True, null=True)
+	FS_URL= models.CharField(max_length=1000,blank=True, null=True)
+	JCES_URL =models.CharField(max_length=1000,blank=True, null=True)
+	L3= models.CharField(max_length=1000,blank=True, null=True)
+	PM = models.CharField(max_length=1000,blank=True, null=True)
+	CDM= models.CharField(max_length=1000,blank=True, null=True)
+	DB_SERVER=models.CharField(max_length=1000,blank=True, null=True)
+	APPL_SERVER=models.CharField(max_length=1000,blank=True, null=True)
+	SRE_SERVER= models.CharField(max_length=1000,blank=True, null=True)
+	DB_Username=models.CharField(max_length=1000,blank=True, null=True)
+	DB_Password=  models.CharField(max_length=1000,blank=True, null=True)
+	Weblogic_Console=models.CharField(max_length=1000,blank=True, null=True)
+	Weblogic_Password=models.CharField(max_length=1000,blank=True, null=True)
     
 
 	

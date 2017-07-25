@@ -9,6 +9,7 @@ class CustomerAdmin(admin.ModelAdmin):
 	list_filter = ('servers',)
 class ServerAdmin(admin.ModelAdmin):
 	list_display = ('sv_id', 'active')
+	list_filter=('customer',)
 
 
 admin.site.register(Customer, CustomerAdmin)
