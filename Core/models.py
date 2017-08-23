@@ -1,17 +1,11 @@
 from django.db import models
 
 # Create your models here.
-class Server(models.Model):
-	sv_id = models.CharField(max_length=1000)
-	active = models.BooleanField(default=False)
-	
-	def __str__(self):
-		return self.sv_id
 
 
 class Customer(models.Model):
 	name = models.CharField(max_length=1000)
-	servers = models.ManyToManyField("Server", blank = True)
+	#servers = models.ManyToManyField("Server", blank = True)
 	SCPO =models.CharField(max_length=1000,blank=True, null=True)
 	Versions=models.CharField(max_length=1000,blank=True, null=True)
 	Citris_URL= models.CharField(max_length=1000,blank=True, null=True)
@@ -27,8 +21,13 @@ class Customer(models.Model):
 	DB_Password=  models.CharField(max_length=1000,blank=True, null=True)
 	Weblogic_Console=models.CharField(max_length=1000,blank=True, null=True)
 	Weblogic_Password=models.CharField(max_length=1000,blank=True, null=True)
-    
-
 	
 	def __str__(self):
 		return self.name
+
+class Server(models.Model):
+	sv_id = models.CharField(max_length=1000)
+	active = models.BooleanField(default=False)
+	customer = models.ForeignKey(Customer, null=True)
+	def __str__(self):
+		return self.sv_id

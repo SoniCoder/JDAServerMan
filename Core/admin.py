@@ -5,21 +5,20 @@ from .models import Customer
 from .models import Server
 
 class ServersInline(admin.TabularInline):
-    model = Customer.servers.through
+   model = Server
 
 class CustomerAdmin(admin.ModelAdmin):
 	list_display = ('name',)
-	list_filter = ('servers',)
 	inlines = [
         ServersInline,
 	]
-	exclude = ('servers',)
+	#exclude = ('servers',)
 class ServerAdmin(admin.ModelAdmin):
 	list_display = ('sv_id', 'active')
 	list_filter = ('customer',)
-	inlines = [
-        ServersInline,
-	]
+	# inlines = [
+        # ServersInline,
+	# ]
 
 
 admin.site.register(Customer, CustomerAdmin)

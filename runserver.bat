@@ -1,0 +1,1 @@
+C:\Users\1022285\AppData\Local\Programs\Python\Python36-32\python.exe manage.py runserver 0.0.0.0:8080
