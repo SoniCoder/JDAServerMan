@@ -18,6 +18,8 @@ class Customer(models.Model):
 	APPL_SERVER=models.CharField(max_length=1000,blank=True, null=True)
 	SRE_SERVER= models.CharField(max_length=1000,blank=True, null=True)
 	DB_Username=models.CharField(max_length=1000,blank=True, null=True)
+	Application_Login=models.CharField(max_length=1200,blank=True, null=True)
+	Application_Password=models.CharField(max_length=1200,blank=True, null=True)
 	DB_Password=  models.CharField(max_length=1000,blank=True, null=True)
 	Weblogic_Console=models.CharField(max_length=1000,blank=True, null=True)
 	Weblogic_Password=models.CharField(max_length=1000,blank=True, null=True)
@@ -25,6 +27,8 @@ class Customer(models.Model):
 	def __str__(self):
 		return self.name
 
+        
+        
 class Server(models.Model):
 	sv_id = models.CharField(max_length=1000)
 	active = models.BooleanField(default=False)

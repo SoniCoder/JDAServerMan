@@ -4,6 +4,8 @@ from django.contrib import admin
 from .models import Customer
 from .models import Server
 
+admin.site.disable_action('delete_selected')
+
 class ServersInline(admin.TabularInline):
    model = Server
 
