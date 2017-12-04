@@ -1,6 +1,9 @@
 from django.contrib import admin
 
 # Register your models here.
+from import_export import resources
+from import_export.admin import ImportExportModelAdmin
+from import_export.admin import ImportExportActionModelAdmin
 from .models import Customer
 from .models import Server
 
@@ -21,6 +24,15 @@ class ServerAdmin(admin.ModelAdmin):
 	# inlines = [
         # ServersInline,
 	# ]
+
+class CustomerResource(resources.ModelResource):
+   
+   class Meta:
+      model=Customer
+      
+class CustomerAdmin(ImportExportActionModelAdmin):
+   pass
+
 
 
 admin.site.register(Customer, CustomerAdmin)
