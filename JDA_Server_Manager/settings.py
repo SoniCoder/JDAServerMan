@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'Core',
     'import_export',
     'django_tables2',
-    'djangojs',
+    # 'djangojs',
     
     
     

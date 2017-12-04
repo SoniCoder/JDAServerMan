@@ -19,14 +19,14 @@ from django.contrib import admin
 
 
 from Core.views import  user_profile
-from Core.views import  TableView
-from Core.views import  MyView
+# from Core.views import  TableView
+# from Core.views import  MyView
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 	url(r'^$', user_profile, name="user_profile"),
-    url(r'^$', TableView, name="TableView"),
-    url(r'^$', MyView, name="MyView"),
+    # url(r'^$', TableView, name="TableView"),
+    # url(r'^$', MyView, name="MyView"),
    
 ]

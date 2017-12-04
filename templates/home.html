@@ -25,10 +25,12 @@
         
 {% endblock %}
 
-<form class="form-wrapper">
+<!-- <form class="form-wrapper"> -->
     <input type="text" id="search" placeholder="Search for..." required>
-    <input type="submit" value="go" id="submit">
-</form>
+    <input type="button" onclick="go()" value="go" id="submit">
+    <input type="button" onclick="exp()" value="export" id="exp">
+    
+<!-- </form> -->
 
 
 <table id="example"  cellspacing="0" width="100%" border="1">

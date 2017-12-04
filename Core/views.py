@@ -4,6 +4,7 @@ from django.template.response import TemplateResponse
 from .models import Customer
 from .tables import CustomerTable
 from .tables import TableView
+
 from django_tables2.export.export import TableExport
 
 
@@ -11,7 +12,17 @@ from django_tables2.export.export import TableExport
 
 
 def user_profile(request):
-    custom=Customer.objects.all()
+    q = request.GET.get('q','')
+    custom = Customer.objects.all()
+    if q: 
+        custom1=custom.filter(name__contains=q)
+        custom2=custom.filter(Status__contains=q)
+        custom = custom1 | custom2
+
+    f = open("static/output.csv", "w")
+    for c in custom:
+        f.write(c.summarise()+"\n")
+
     table= CustomerTable(Customer.objects.all())
     RequestConfig(request,paginate={'per_page':15}).configure(table)
     

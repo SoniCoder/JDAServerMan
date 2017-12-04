@@ -1,6 +1,18 @@
 
-alert("hello");
+// alert("hello");
 
+function go(){
+    // alert("hellonikhar");
+    var q = document.getElementById("search").value;
+    
+    window.open("/?q="+q,"_self");
+}
+
+
+function exp(){
+    
+    window.open("/static/output.csv","_self");
+}
 
 var $rows = $('#table tr');
 $('#search').keyup(function() {

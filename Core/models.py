@@ -56,6 +56,10 @@ class Customer(models.Model):
 	def __str__(self):
 		return self.name
 
+	def summarise(self):
+		s = ",".join([str(self.name), str(self.Status), str(self.Product)])
+		return s
+
         
         
 class Server(models.Model):
