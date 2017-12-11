@@ -55,9 +55,18 @@ class Customer(models.Model):
 	
 	def __str__(self):
 		return self.name
+	
+
+	def abcd(self):
+		r=",".join(["Customer Name", "Status" ,"Product" ,"Operating System" ,"Server_Type" ,"Version" ,"Citrux_URL" ,"F5_URL" ,"SSO" ,"SSO_URL" ,"JCES_URL" ,"L3" ,"PM" ,"CDM" ,"DB_SERVER" ,"APPL_SERVER" ,"SRE_SERVER"
+					,"DB_Username" ,"DB_Password" ,"Application Login" ,"Application Password" ,"Weblogic Console" ,"Weblogic password" ,"Cluster" ,"Sharepoint Link" ,"SLA" ,"Customer_DL"  ,"Control M Template"])
+		return r
 
 	def summarise(self):
-		s = ",".join([str(self.name), str(self.Status), str(self.Product)])
+		s = ",".join([str(self.name), str(self.Status), str(self.Product),str(self.Operating_System),str(self.Server_Type),str(self.Version),str(self.Citrux_URL),
+					  str(self.F5_URL),str(self.SSO),str(self.SSO_URL),str(self.JCES_URL),str(self.L3),str(self.PM),str(self.CDM),str(self.DB_SERVER),str(self.APPL_SERVER),
+					  str(self.SRE_SERVER),str(self.DB_Username),str(self.DB_Password),str(self.Application_Login),str(self.Application_Password),str(self.Weblogic_Console),
+					  str(self.Weblogic_Password),str(self.Cluster),str(self.SharePoint_Link),str(self.SLA),str(self.P_and_P_Link),str(self.Customer_DL),str(self.Control_M_Template)])
 		return s
 
         
